@@ -12,9 +12,7 @@ public class ColourPrint extends PrintJob {
             return (getPages() * 1500) + 2000;
         }
 
-        return (10 * 1500)
-                + ((getPages() - 10) * 1000)
-                + 2000;
+        return (10 * 1500) + ((getPages() - 10) * 1000) + 2000;
     }
 
     @Override

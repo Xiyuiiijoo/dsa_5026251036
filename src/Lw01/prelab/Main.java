@@ -20,10 +20,10 @@ public class Main {
                 String jobId = scanner.next();
                 int totalPages = scanner.nextInt();
 
-                if (printType.equals("MONO")) {
+                if (printType.equals("Mono")) {
                     PrintJob monoJob = new MonoPrint(jobId, totalPages);
                     printJobs.add(monoJob);
-                } else if (printType.equals("COLOUR")) {
+                } else if (printType.equals("Colour")) {
                     PrintJob colourJob = new ColourPrint(jobId, totalPages);
                     printJobs.add(colourJob);
                 }
