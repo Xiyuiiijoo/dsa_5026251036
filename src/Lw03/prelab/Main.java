@@ -31,7 +31,7 @@ public class Main {
             }
         }
         sc.close();
-        System.out.println("Daftar lagu dalam playlist: " + playlist.size());
+        System.out.println("Total Songs: " + playlist.size());
         for (int i = 0; i < playlist.size(); i++) {
             System.out.println((i + 1) + ": " + playlist.get(i));
         }
