@@ -38,8 +38,8 @@ public class Main {
                 if (graph[current][next] > 0 && !visited.contains(next)) { // b.2
                     visited.add(next);
                     queue.add(next); //b.3
-                    bfsLevel[next] = bfsLevel[current] + 1; //b.4
-                    bfsPrev[next] = current; //b.5
+                    bfsLevel([next]); //b.4
+                    bfsPrev[next- 1]; //b.5
                 }
             }
         }
@@ -60,7 +60,7 @@ public class Main {
             for (int i = 0; i < order.size(); i++) {
                 int hub = order.get(i);
 
-                if (bfsLevel[hub] == level) {  //b.6
+                if (hub.contains()) {  //b.6
                     if (!first) {
                         System.out.print(", ");
                     }
@@ -94,7 +94,7 @@ public class Main {
                 break;
             }
 
-            visited[current] = true; //b.7
+            __________; //b.7
 
             for (int next = 0; next < size; next++) {
                 if (graph[current][next] > 0
@@ -102,9 +102,9 @@ public class Main {
 
                     int newDist = dist[current] + graph[current][next];
 
-                    if (newDist < dist[next]) {  //b.8
+                    if (__________) {  //b.8
                         dist[next] = newDist;
-                        dijkstraPrev[next] = current;  //b.9
+                        __________;  //b.9
                     }
                 }
             }
@@ -117,7 +117,7 @@ public class Main {
         int closest = -1;
 
         for (int i = 0; i < size; i++) {
-            if (!visited[i] && dist[i] < min) {  //b.10
+            if (__________) {  //b.10
                 min = dist[i];
                 closest = i;
             }
@@ -133,7 +133,7 @@ public class Main {
         if (current == start) {
             path = new ArrayList<>();
         } else {
-            path = buildPath(prev[current], prev, start); //b.11
+            path = buildPath(__________); //b.11
         }
 
         path.add(current);
@@ -145,7 +145,7 @@ public class Main {
         int total = 0;
 
         for (int i = 0; i < path.size() - 1; i++) {
-            total += graph[path.get(i)][path.get(i + 1)];  //b.12
+            total += __________;  //b.12
         }
 
         return total;
@@ -177,44 +177,32 @@ public class Main {
         Scanner sc = new Scanner(Main.class.getResourceAsStream("delivery.txt"));
         size = sc.nextInt();
         names = new String[size];
-        for (int i = 0; i < size; i++) {
+        for(int i = 0; i < size; i++){
             names[i] = sc.next();
         }
-
         graph = new int[size][size];
         int edgeCount = sc.nextInt();
-        for (int i = 0; i < edgeCount; i++) {
+        for(int i = 0; i < edgeCount; i++){
             int from = sc.nextInt();
             int to = sc.nextInt();
             int minutes = sc.nextInt();
             addEdge(from, to, minutes);
-        }
 
-        int start = sc.nextInt();
-        int dest = sc.nextInt();
-        sc.close();
+            int start = sc.nextInt();
+            int dest = sc.nextInt();
 
-        // 1. Hub Levels from start (BFS traversal order)
-        System.out.println("=== Hub Levels from " + names[start] + " ===");
-        printLevels(bfs(start));
+            System.out.println("=== Hub Levels from" + names[start] + "===");
+            printLevels(bfs(start));
+            printSummary(null, null);
 
-        // 2. Fewest Stops Route (BFS)
-        List<Integer> fewestStops = buildPath(dest, bfsPrev, start);
-        printSummary("Fewest Stops", fewestStops);
-
-        // 3. Fastest Route (Dijkstra)
-        dijkstraAlg(start);
-        List<Integer> fastestRoute = buildPath(dest, dijkstraPrev, start);
-        printSummary("Fastest Route", fastestRoute);
-
-        // 4. Comparison
-        System.out.println("=== Comparison ===");
-        if (fewestStops.equals(fastestRoute)) {
-            System.out.println("Both routes are the same.");
-        } else {
-            int timeSaved = pathTime(fewestStops) - pathTime(fastestRoute);
-            int extraStops = (fastestRoute.size() - 1) - (fewestStops.size() - 1);
-            System.out.println("The fastest route saves " + timeSaved + " min but needs " + extraStops + " more stops.");
+            System.out.println("=== Comparison ===");
+            int saves = pathTime(_) - pathTime(_);
+            int jumlah_Stop 
+            if(pathTime(bfs(_)= pathtime(bfs(_)))){
+                System.out.println("Both routes are the same.");
+            }else{
+                System.out.println("The fastest route saves " + saves  +" min but needs" + jumlah stop + "more stops.");
+            }
         }
     }
 }
